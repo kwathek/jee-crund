@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<ui:composition template="/pages/public/layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="main-content">
+			<div class="form-register-with-email">
+
+				<h:form styleClass="form-register">
+					<div class="form-title-row">
+						<h3>Register as new customer</h3>
+					</div>
+					<div class="form-row">
+						<div>
+							<p:inputText styleClass="form-control" id="userName" required="true"
+								requiredMessage="Required Field" placeholder="User name or Email address"
+								value="#{userBean.user.userName}" />
+							<p:message for="userName" />
+						</div>
+					</div>
+					<div class="form-row">
+						<div>
+							<p:password styleClass="form-control" id="password"
+								required="true" requiredMessage="Required Field"
+								value="#{userBean.user.password}" placeholder="Password"></p:password>
+							<p:message for="password" />
+						</div>
+					</div>
+					<p:commandButton action="#{userBean.authenticate}"
+						value="Register"></p:commandButton>
+
+
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

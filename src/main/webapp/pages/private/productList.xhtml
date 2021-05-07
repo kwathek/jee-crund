@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+
+
+	<a href="#" class="btn btn-info btn-lg"> <span
+		class="glyphicon glyphicon-plus"></span> Create product
+	</a>
+
+
+	<h:form id="productForm">
+		<h:panelGroup id="createProduct">
+
+			<div class="form-row">
+				<h:outputLabel value="Nom" styleClass="form-label" />
+				<div>
+					<p:inputText styleClass="form-control" id="nom" required="true"
+						requiredMessage="Required Field" value="#{productBean.product.nom}" />
+					<p:message for="nom" />
+				</div>
+			</div>
+			<div class="form-row">
+				<h:outputLabel value="Description" />
+				<div>
+					<p:inputText styleClass="form-control" id="description"
+						required="true" requiredMessage="Required Field"
+						value="#{productBean.product.description}" />
+					<p:message for="description" />
+				</div>
+			</div>
+			<div class="form-row">
+				<h:outputLabel value="Quantity" />
+				<div>
+					<p:inputText styleClass="form-control" id="quantity" required="true"
+						requiredMessage="Required Field" value="#{productBean.product.quantity}" />
+					<p:message for="quantity" />
+				</div>
+			</div>
+			<div class="form-row">
+				<p:outputLabel value="Categories"/>
+				<div>
+					<p:selectOneMenu styleClass="form-control" id="categoryId" value="#{productBean.product.categoryId}">
+						<f:selectItems value="#{categoryBean.existingCategories}" var="cat"
+									   itemLabel="#{cat.nom}" itemValue="#{cat.id}"/>
+					</p:selectOneMenu>
+					<p:message for="categoryId" />
+				</div>
+			</div>
+			<p:commandButton action="#{productBean.saveOrUpdateProduct}"
+				update="createProduct listForm:productListGroup"
+				value="#{empty productBean.product.id? 'Create' : 'Update'}"
+				styleClass="btn btn-primary"></p:commandButton>
+
+		</h:panelGroup>
+	</h:form>
+	<h:form id="listForm">
+		<h:panelGroup id="productListGroup">
+			<p:dataTable class="table" value="#{productBean.existingProducts}" var="product">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Product Name" />
+					</f:facet>
+					<h:outputText value="#{product.nom}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Product Description" />
+					</f:facet>
+					<h:outputText value="#{product.description}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Product quantity" />
+					</f:facet>
+					<h:outputText value="#{product.quantity}">
+
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Product category" />
+					</f:facet>
+					<h:outputText value="#{product.category}">
+
+					</h:outputText>
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Actions" />
+					</f:facet>
+					<p:commandLink value="Edit" action="#{productBean.editProduct(product)}" update="productForm:createProduct"
+						 styleClass="btn btn-info" />
+					<p:commandLink value="Delete"
+						action="#{productBean.deleteProduct(product.id)}" update="listForm:productListGroup"
+						 styleClass="btn btn-danger" />
+				</p:column>
+
+			</p:dataTable>
+
+		</h:panelGroup>
+	</h:form>
+
+</HTML>

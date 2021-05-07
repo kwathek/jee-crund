@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<ui:composition template="/pages/public/layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	<ui:define name="content">
+		<div class="main-content">
+			<div class="form-register-with-email">
+
+				<h:form styleClass="form-register" id="customerForm">
+					<h:panelGroup id="customerFormGroup">
+					<h:messages globalOnly="true" infoClass="infoMessage" showDetail="true" showSummary="false"></h:messages>
+						<div class="form-title-row">
+							<h3>Register as new customer</h3>
+						</div>
+						<div class="form-row">
+							<h:outputLabel value="Name" styleClass="form-label" />
+							<div>
+								<p:inputText styleClass="form-control" id="name" required="true"
+									requiredMessage="Required Field"
+									value="#{customerBean.customer.name}" />
+								<p:message for="name" />
+							</div>
+						</div>
+						<div class="form-row">
+							<h:outputLabel value="Email" />
+							<div>
+								<p:inputText styleClass="form-control" id="email"
+									required="true" requiredMessage="Required Field"
+									value="#{customerBean.customer.email}" />
+								<p:message for="email" />
+							</div>
+						</div>
+						<div class="form-row">
+							<h:outputLabel value="Address" />
+							<div>
+								<p:inputText styleClass="form-control" id="address"
+									required="true" requiredMessage="Required Field"
+									value="#{customerBean.customer.address}" />
+								<p:message for="address" />
+							</div>
+						</div>
+						<div class="form-row">
+							<h:outputLabel value="Password"></h:outputLabel>
+							<div>
+								<p:password styleClass="form-control" id="password"
+									required="true" requiredMessage="Required Field"
+									value="#{customerBean.rawPassword}"></p:password>
+								<p:message for="password" />
+							</div>
+						</div>
+						<p:commandButton action="#{customerBean.registerCustomer}"
+							update="customerForm:customerFormGroup" value="Register"></p:commandButton>
+
+					</h:panelGroup>
+				</h:form>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>

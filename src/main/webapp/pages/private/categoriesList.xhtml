@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<HTML xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://java.sun.com/jsf/html"
+	  xmlns:f="http://java.sun.com/jsf/core"
+	  xmlns:ui="http://java.sun.com/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui">
+
+
+	<a href="#" class="btn btn-info btn-lg"> <span
+		class="glyphicon glyphicon-plus"></span> Create category
+	</a>
+
+
+	<h:form id="categoryForm">
+		<h:panelGroup id="createCategory">
+
+			<div class="form-row">
+				<h:outputLabel value="Nom" styleClass="form-label" />
+				<div>
+					<p:inputText styleClass="form-control" id="nom" required="true"
+						requiredMessage="Required Field" value="#{categoryBean.category.nom}" />
+					<p:message for="nom" />
+				</div>
+			</div>
+			<div class="form-row">
+				<h:outputLabel value="Description" />
+				<div>
+					<p:inputText styleClass="form-control" id="description"
+						required="true" requiredMessage="Required Field"
+						value="#{categoryBean.category.description}" />
+					<p:message for="description" />
+				</div>
+			</div>
+			<p:commandButton action="#{categoryBean.saveOrUpdateCategory}"
+				update="createCategory listForm:categoryListGroup"
+				value="#{empty categoryBean.category.id? 'Create' : 'Update'}"
+				styleClass="btn btn-primary"></p:commandButton>
+
+		</h:panelGroup>
+	</h:form>
+	<h:form id="listForm">
+		<h:panelGroup id="categoryListGroup">
+			<p:dataTable value="#{categoryBean.existingCategories}" var="category">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Category Name" />
+					</f:facet>
+					<h:outputText value="#{category.nom}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Category Description" />
+					</f:facet>
+					<h:outputText value="#{category.description}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Actions" />
+					</f:facet>
+					<p:commandLink value="Edit" action="#{categoryBean.editCategory(category)}" update="categoryForm:createCategory"
+						 styleClass="btn btn-info" />
+					<p:commandLink value="Delete"
+						action="#{categoryBean.deleteCategory(category.id)}" update="listForm:categoryListGroup"
+						 styleClass="btn btn-danger" />
+				</p:column>
+
+			</p:dataTable>
+
+		</h:panelGroup>
+	</h:form>
+
+</HTML>
