@@ -22,8 +22,7 @@ import com.app.service.UserService;
 
 /**
  * user backed bean used for login form
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Controller
@@ -63,7 +62,7 @@ public class UserBean implements Serializable {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			if (encoder.matches(user.getPassword(), loggedInUser.getPassword())) {
 				addLoggedInCustomerToSession();
-				return "/pages/private/dashboard.xhtml";
+				return "/pages/private/dashboard_products.jsf";
 			} else {
 				invalidLogin();
 			}
@@ -75,7 +74,6 @@ public class UserBean implements Serializable {
 
 	
 	private void invalidLogin() {
-		System.out.println("invalid loginnnnnnnnnnnnnnnn");
 		FacesMessage message = new FacesMessage();
 		message.setSeverity(FacesMessage.SEVERITY_ERROR);
 		message.setDetail("Invalid login");
@@ -84,14 +82,9 @@ public class UserBean implements Serializable {
 
 	private void addLoggedInCustomerToSession() {
 		Customer customer  = customerService.getCustomerByUserName(user.getUserName());
-		//customer.setEmail(user.getUserName());
-
 		ExternalContext extContext = this.context.getExternalContext();
 		HttpSession session = (HttpSession) extContext.getSession(true);
 		session.setAttribute(Customer.class.getSimpleName(), customer);
-		System.out.println("=================> Customer.class.getSimpleName() : "+Customer.class.getSimpleName());
-		System.out.println("=================> customer.getName() : "+customerService.getCustomerByUserName(user.getUserName()));
-		System.out.println("=================> session : "+session.getAttribute(Customer.class.getSimpleName()));
 	}
 
 	public User getUser() {

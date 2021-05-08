@@ -1,9 +1,8 @@
 package com.app.managedbean;
 
-import com.app.dto.Category;
+
 import com.app.dto.Customer;
 import com.app.dto.Product;
-import com.app.service.CategoryService;
 import com.app.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -21,8 +20,7 @@ import java.util.List;
 /**
  * Order backed bean
  * This object is with custome scope <tt>view</tt> to match with the {@link ViewScoped} in JSF
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Controller

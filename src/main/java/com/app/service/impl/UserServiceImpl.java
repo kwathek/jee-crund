@@ -10,8 +10,7 @@ import com.app.repository.UserRepository;
 import com.app.service.UserService;
 
 /**
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Service("userService")

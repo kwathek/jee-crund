@@ -22,7 +22,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * <p>
  * 		configures the hibernate data source
  * </p>
- * @author Seetharama Krishna
  *
  */
 @Configuration

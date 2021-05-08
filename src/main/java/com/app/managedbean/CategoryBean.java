@@ -23,8 +23,7 @@ import java.util.List;
 /**
  * Order backed bean
  * This object is with custome scope <tt>view</tt> to match with the {@link ViewScoped} in JSF
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Controller

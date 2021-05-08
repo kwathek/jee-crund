@@ -12,8 +12,7 @@ import com.app.repository.BaseRepository;
 /**
  * base service implemented by all components in service layer
  * this consists methods require from CRUD operations
- * 
- * @author Seetharama Krishna
+ *
  *
  * @param <D> object that extends BaseDTO
  */

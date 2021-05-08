@@ -3,13 +3,13 @@ package com.app.test.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.app.dto.Product;
+import com.app.entity.ProductEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.app.dto.Customer;
-import com.app.dto.Order;
 import com.app.dto.User;
 import com.app.entity.CustomerEntity;
-import com.app.entity.OrderEntity;
 import com.app.entity.UserEntity;
 
 /**
@@ -128,26 +128,26 @@ public class DataObjectFactory {
 	}
 	
 	/**
-	 * Create {@link List} of {@link Order}
+	 * Create {@link List} of {@link Product}
 	 * 
 	 * @return {@link List}
 	 */
-	public List<Order> createOrderList() {
-		List<Order> orders = new ArrayList<>();
-		orders.add(new Order());
-		orders.add(new Order());
+	public List<Product> createOrderList() {
+		List<Product> orders = new ArrayList<>();
+		orders.add(new Product());
+		orders.add(new Product());
 		return orders;
 	}
 	
 	/**
-	 * Create {@link List} of {@link OrderEntity}
+	 * Create {@link List} of {@link ProductEntity}
 	 * 
 	 * @return {@link List}
 	 */
-	public List<OrderEntity> createOrderEntityList() {
-		List<OrderEntity> orders = new ArrayList<>();
-		orders.add(new OrderEntity());
-		orders.add(new OrderEntity());
+	public List<ProductEntity> createOrderEntityList() {
+		List<ProductEntity> orders = new ArrayList<>();
+		orders.add(new ProductEntity());
+		orders.add(new ProductEntity());
 		return orders;
 	}
 

@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 /**
  * User Entity
- * @author Seetharama Krishna
  *
  */
 @Entity

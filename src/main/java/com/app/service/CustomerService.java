@@ -5,8 +5,6 @@ import com.app.entity.CustomerEntity;
 
 /**
  * Customer service
- * 
- * @author Seetharama Krishna
  *
  */
 public interface CustomerService extends BaseService<Customer, CustomerEntity> {

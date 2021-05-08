@@ -18,8 +18,7 @@ import com.app.service.UserService;
 
 /**
  * Customer backed bean
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Controller

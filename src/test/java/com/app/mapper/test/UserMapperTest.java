@@ -2,13 +2,13 @@ package com.app.mapper.test;
 
 import static org.junit.Assert.assertEquals;
 
+import com.app.test.util.DataObjectFactory;
 import org.junit.Before;
 import org.junit.Test;
 
 import com.app.dto.User;
 import com.app.entity.UserEntity;
 import com.app.mapper.UserMapper;
-import com.app.test.util.DataObjectFactory;
 
 /**
  * Tests user mapper

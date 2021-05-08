@@ -7,8 +7,7 @@ import com.app.entity.CustomerEntity;
 
 /**
  * mapper for customer
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Component

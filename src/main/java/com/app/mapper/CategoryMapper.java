@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Mapper for order
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Component
@@ -30,7 +29,6 @@ public class CategoryMapper implements BaseMapper<Category, CategoryEntity> {
 		baseMappingEntityToDto(category, entity);
 		category.setNom(entity.getNom());
 		category.setDescription(entity.getDescription());
-		//order.setCustomerId(entity.getCustomer().getId());
 		return category;
 	}
 
@@ -38,13 +36,8 @@ public class CategoryMapper implements BaseMapper<Category, CategoryEntity> {
 	public CategoryEntity mapDtoToEntity(Category dto) {
 		CategoryEntity entity = new CategoryEntity();
 		baseMappingDtoToEntity(dto, entity);
-		//entity.setCustomer(customerRepository.findOne(dto.getCustomerId()));
 		entity.setDescription(dto.getDescription());
 		entity.setNom(dto.getNom());
-		//Amount amount = new Amount();
-		//amount.setAmount(dto.getValue());
-		//amount.setCurrencyCode(Currency.USD.name());
-		//entity.setValue(amount);
 		return entity;
 	}
 

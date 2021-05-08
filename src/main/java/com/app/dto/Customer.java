@@ -2,8 +2,7 @@ package com.app.dto;
 
 /**
  * Customer information
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 public class Customer extends BaseDTO {

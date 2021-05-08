@@ -7,8 +7,7 @@ import com.app.entity.UserEntity;
 
 /**
  * Mapper for User
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Component

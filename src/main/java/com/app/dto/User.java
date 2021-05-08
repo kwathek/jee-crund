@@ -2,8 +2,6 @@ package com.app.dto;
 
 /**
  * User information
- * 
- * @author Seetharama Krishna
  *
  */
 public class User extends BaseDTO {

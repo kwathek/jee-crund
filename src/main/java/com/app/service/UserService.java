@@ -5,8 +5,6 @@ import com.app.entity.UserEntity;
 
 /**
  * User service
- * 
- * @author Seetharama Krishna
  *
  */
 public interface UserService extends BaseService<User, UserEntity> {

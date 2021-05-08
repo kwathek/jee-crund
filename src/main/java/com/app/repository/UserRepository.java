@@ -6,8 +6,7 @@ import com.app.entity.UserEntity;
 
 /**
  * repository for user
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Repository

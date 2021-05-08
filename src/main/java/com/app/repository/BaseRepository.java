@@ -6,8 +6,7 @@ import com.app.entity.BaseEntity;
 
 /**
  * Base JPA Repository
- * 
- * @author Seetharama Krishna
+ *
  *
  * 
  * @param <E> Any Entity that extends from {@link BaseEntity}

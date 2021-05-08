@@ -14,8 +14,7 @@ import javax.persistence.Version;
 /**
  * base entity for all the entities.
  * contains common fields such as <tt>id</tt> and <tt>version</tt>
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @MappedSuperclass

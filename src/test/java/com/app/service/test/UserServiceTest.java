@@ -6,6 +6,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.List;
 
+import com.app.test.util.DataObjectFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,7 +20,6 @@ import com.app.mapper.UserMapper;
 import com.app.repository.UserRepository;
 import com.app.service.UserService;
 import com.app.service.impl.UserServiceImpl;
-import com.app.test.util.DataObjectFactory;
 
 /**
  * Test {@link UserServiceImpl}

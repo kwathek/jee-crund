@@ -8,13 +8,10 @@ import com.app.mapper.CategoryMapper;
 import com.app.repository.BaseRepository;
 import com.app.repository.CategoryRepository;
 import com.app.service.CategoryService;
-import com.app.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * 
- * @author Seetharama Krishna
  *
  */
 @Service("categoryService")
@@ -40,14 +37,5 @@ public class CategoryServiceImpl implements CategoryService {
 	public Product findByNom(String nom) {
 		return null;
 	}
-
-	/**
-	 * @see OrderService#getAllCustomerOrders(Long)
-	 */
-	/*@Transactional
-	@Override
-	public List<Order> getAllCustomerOrders(Long customerId) {
-		return orderMapper.mapEntityListToDtoList(orderRepository.findByCustomerId(customerId));
-	}*/
 
 }

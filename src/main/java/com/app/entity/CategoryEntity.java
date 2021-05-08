@@ -8,7 +8,6 @@ import javax.persistence.Table;
 
 /**
  * User Entity
- * @author Seetharama Krishna
  *
  */
 @Entity

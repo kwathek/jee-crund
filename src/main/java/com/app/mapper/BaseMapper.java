@@ -12,8 +12,7 @@ import com.app.entity.BaseEntity;
  * 		Base mapper consists the methods for mapping the Entity to DTO and vice versa.
  * 		Provide default methods for Mapping lists.
  * </p>
- * 
- * @author Seetharama Krishna
+ *
  *
  * @param <D>
  * @param <E>

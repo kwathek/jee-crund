@@ -11,7 +11,6 @@ import javax.persistence.Table;
  * <p>
  * 		Customer Entity
  * </p>
- * @author Seetharama Krishna
  *
  */
 @Entity
@@ -29,16 +28,7 @@ public class CustomerEntity extends BaseEntity {
 	private String email;
 	@Column(name = "ADDRESS", length = 250)
 	private String address;
-	
-	@OneToMany(mappedBy = "customer")
-	private Set<OrderEntity> orders;
-	
-	public Set<OrderEntity> getOrders() {
-		return orders;
-	}
-	public void setOrders(Set<OrderEntity> orders) {
-		this.orders = orders;
-	}
+
 	public String getName() {
 		return name;
 	}

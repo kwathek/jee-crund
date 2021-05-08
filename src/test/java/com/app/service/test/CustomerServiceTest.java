@@ -3,6 +3,7 @@ package com.app.service.test;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
+import com.app.test.util.DataObjectFactory;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +17,6 @@ import com.app.mapper.CustomerMapper;
 import com.app.repository.CustomerRepository;
 import com.app.service.CustomerService;
 import com.app.service.impl.CustomerServiceImpl;
-import com.app.test.util.DataObjectFactory;
 
 /**
  * Tests {@link CustomerServiceImpl}

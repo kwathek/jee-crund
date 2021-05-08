@@ -6,7 +6,6 @@ import java.io.Serializable;
  * <p>
  * 		Base object for all DTOs, contains the common fields across the application
  * </p>
- * @author Seetharama Krishna
  *
  */
 public class BaseDTO implements Serializable {

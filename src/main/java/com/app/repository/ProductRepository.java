@@ -6,8 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * repository for user
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Repository

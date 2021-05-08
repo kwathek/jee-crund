@@ -6,8 +6,7 @@ import com.app.entity.CustomerEntity;
 
 /**
  * repository for customer
- * 
- * @author Seetharama Krishna
+ *
  *
  */
 @Repository
